@@ -1,5 +1,3 @@
-package crystal.spark
-
 import java.util.regex.Pattern
 
 import org.apache.hadoop.hbase.HBaseConfiguration
