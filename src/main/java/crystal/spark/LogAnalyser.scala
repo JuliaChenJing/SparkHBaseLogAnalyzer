@@ -11,13 +11,13 @@ import org.apache.spark.SparkContext
 
 object LogAnalyser extends Serializable
 {
-  def main(args: Array[String]) 
+  def main(args: Array[String]) // main methed
  {
     val sc = new SparkContext()
 
     case class Record(method: String, url: String, code: String)
 
-    val input = sc.textFile("input", 5).cache()
+    val input = sc.textFile("input", 5).cache()// get input file
     def parseLine(line:String):Option[Record] = {
       val codeAndUri = Pattern.compile("\"([A-Za-z]+) (.*?) [a-zA-Z0-9./]+\" (\\d{3})").matcher(line)
       if(codeAndUri.find){
